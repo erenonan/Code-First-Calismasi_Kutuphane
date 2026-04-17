@@ -1,0 +1,41 @@
+﻿@model List<Code_First_Calismasi.Models.Kitap>
+
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+
+<h2>Kitap Yönet</h2>
+
+<a asp-action="Ekle">Yeni Kitap Ekle</a>
+<br /><br />
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Kitap Id</th>
+            <th>Kitap Adı</th>
+            <th>Yazar Adı</th>
+            <th>Kitap Türü</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6">Henüz kayıtlı bir kitap bulunmuyor.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.KitapId</td>
+                    <td>@item.KitapAdi</td>
+                    <td>@item.YazarAdi</td>
+                    <td>@item.KitapTuru</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

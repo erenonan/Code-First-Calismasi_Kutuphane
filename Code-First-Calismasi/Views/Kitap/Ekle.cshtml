@@ -1,0 +1,30 @@
+﻿@model Code_First_Calismasi.Models.Kitap
+
+@{
+    ViewData["Title"] = "Yeni Kitap Ekle";
+}
+
+<div class="container">   
+        <div>
+            <h3>Yeni Üye Kaydı</h3>
+            
+            <form asp-action="Ekle" method="post">
+                <div>
+                    <label asp-for="KitapAdi" class="form-label">Kitap Adı</label>
+                    <input asp-for="KitapAdi" placeholder="Kitabın adını girin" required />
+                </div>
+                <div>
+                    <label asp-for="YazarAdi" class="form-label">Yazar Adı</label>
+                    <input asp-for="YazarAdi" placeholder="Yazarın adını girin" required />
+                </div>
+                <div>
+                    <label asp-for="KitapTuru" class="form-label">Kitap Türü</label>
+                    <input asp-for="KitapTuru" placeholder="Kitabın türünü girin" required />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <a asp-action="Index" >Geri Dön</a>
+                </div>
+            </form>
+        </div>
+</div>
